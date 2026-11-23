@@ -12,7 +12,10 @@
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink);
          font:16px/1.45 Georgia, "Times New Roman", serif; }
-  header { max-width:1280px; margin:0 auto; padding:48px 16px 24px; }
+  header { max-width:1280px; margin:0 auto; padding:32px 16px 24px; }
+  nav { display:flex; gap:18px; flex-wrap:wrap; font-family:system-ui,sans-serif; font-size:.9rem; margin-bottom:28px; }
+  nav a { color:var(--muted); text-decoration:none; padding-bottom:2px; border-bottom:2px solid transparent; }
+  nav a[aria-current] { color:var(--ink); border-color:var(--accent); }
   h1 { font-size:clamp(1.8rem,4vw,2.8rem); margin:0 0 8px; font-weight:normal; letter-spacing:.01em; }
   header p { margin:0; color:var(--muted); font-family:system-ui,sans-serif; font-size:.95rem; }
   main { max-width:1280px; margin:0 auto; padding:0 16px 64px;
@@ -34,6 +37,7 @@
 </head>
 <body>
 <header>
+  <nav><a href="index.html" aria-current="page">Gallery</a><a href="colors.html">Average colour</a><a href="pigments.html">Pigments</a></nav>
   <h1>Public Domain Masterpieces</h1>
   <p>23 paintings · images from Wikimedia Commons, all public domain · select a link for the full-resolution file</p>
 </header>
@@ -154,8 +158,8 @@
     <div class="frame"><img src="thumbs/water-lilies.jpg" alt="Water Lilies by Claude Monet" loading="lazy" decoding="async"></div>
     <div class="meta">
       <h2>Water Lilies</h2>
-      <span class="by">Claude Monet · 1896–1926</span>
-      <a href="https://commons.wikimedia.org/wiki/File:Reflections_of_Clouds_on_the_Water-Lily_Pond.jpg" target="_blank" rel="noopener">Full resolution on Commons ↗</a>
+      <span class="by">Claude Monet · 1906</span>
+      <a href="https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Water_Lilies_-_1906,_Ryerson.jpg" target="_blank" rel="noopener">Full resolution on Commons ↗</a>
     </div>
   </article>
   <article class="card">

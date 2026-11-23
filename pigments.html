@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painters' Pigments</title>
+<style>
+  :root { --bg:#f6f3ee; --card:#fff; --ink:#1d1b18; --muted:#6b645a; --line:#e4ddd2; --accent:#8a4b2a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#151412; --card:#1f1d1a; --ink:#eee8df; --muted:#a39a8d; --line:#33302b; --accent:#e0a070; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.45 Georgia, "Times New Roman", serif; }
+  header { max-width:1280px; margin:0 auto; padding:32px 16px 24px; }
+  nav { display:flex; gap:18px; flex-wrap:wrap; font-family:system-ui,sans-serif; font-size:.9rem; margin-bottom:28px; }
+  nav a { color:var(--muted); text-decoration:none; padding-bottom:2px; border-bottom:2px solid transparent; }
+  nav a[aria-current] { color:var(--ink); border-color:var(--accent); }
+  h1 { font-size:clamp(1.8rem,4vw,2.8rem); margin:0 0 8px; font-weight:normal; }
+  header p { margin:0; color:var(--muted); font-family:system-ui,sans-serif; font-size:.95rem; max-width:70ch; }
+  main { max-width:1280px; margin:0 auto; padding:0 16px 64px; display:grid; gap:20px;
+         grid-template-columns:repeat(4,1fr); }
+  @media (max-width:1000px) { main { grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:700px)  { main { grid-template-columns:repeat(2,1fr); gap:12px; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+          display:flex; flex-direction:column; }
+  .meta { padding:12px 14px 14px; display:flex; flex-direction:column; gap:2px; }
+  .meta h2 { font-size:1.02rem; margin:0; line-height:1.25; }
+  .by { color:var(--muted); font-family:system-ui,sans-serif; font-size:.85rem; }
+  footer { max-width:1280px; margin:0 auto; color:var(--muted); font-family:system-ui,sans-serif;
+           font-size:.8rem; padding:0 16px 40px; }
+
+  .chips { list-style:none; margin:0; padding:12px 14px 16px; display:grid;
+           grid-template-columns:repeat(auto-fill,minmax(70px,1fr)); gap:10px 8px; flex:1; align-content:start;
+           border-bottom:1px solid var(--line); }
+  .chips li { display:flex; flex-direction:column; gap:4px; font-family:system-ui,sans-serif;
+              font-size:.7rem; line-height:1.15; }
+  .chips i { display:block; height:34px; border-radius:4px; box-shadow:inset 0 0 0 1px #0002; }
+  .chips li.L i { outline:2px dashed var(--muted); outline-offset:2px; }
+  .chips li.L span { color:var(--muted); }
+  .legend { display:flex; gap:18px; margin-top:12px; flex-wrap:wrap; }
+  .legend i { display:inline-block; width:14px; height:14px; vertical-align:-2px; margin-right:6px;
+              border-radius:3px; background:#b08850; }
+  .legend .L i { outline:2px dashed var(--muted); outline-offset:1px; }
+
+</style>
+</head>
+<body>
+<header>
+  <nav><a href="index.html">Gallery</a><a href="colors.html">Average colour</a><a href="pigments.html" aria-current="page">Pigments</a></nav>
+  <h1>The pigments behind each painting</h1>
+  <p>The paints each artist most likely used. Solid swatches are pigments reported in technical and conservation studies of the work (for Monet, his own stated palette); dashed swatches are likely, based on the artist's known palette, the period and the colours visible in the painting.<span class="legend"><span><i></i>Documented</span><span class="L"><i></i>Likely</span></span></p>
+</header>
+<main>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="D"><i style="background:#5E4A33"></i><span>Raw umber</span></li><li class="L"><i style="background:#3E8F7A"></i><span>Verdigris / copper green</span></li><li class="L"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="L"><i style="background:#2A3F9E"></i><span>Natural ultramarine (lapis lazuli)</span></li><li class="L"><i style="background:#1E1C1B"></i><span>Bone black</span></li></ul>
+    <div class="meta"><h2>Mona Lisa</h2><span class="by">Leonardo da Vinci · c. 1503–1519</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#2A3F9E"></i><span>Natural ultramarine (lapis lazuli)</span></li><li class="L"><i style="background:#2F5DA0"></i><span>Azurite</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#3E8F7A"></i><span>Verdigris / copper green</span></li><li class="L"><i style="background:#7C8A63"></i><span>Green earth</span></li><li class="D"><i style="background:#D4AF37"></i><span>Gold leaf</span></li></ul>
+    <div class="meta"><h2>The Birth of Venus</h2><span class="by">Sandro Botticelli · c. 1484–1486</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F3F0E4"></i><span>Lime white</span></li><li class="D"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="D"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="D"><i style="background:#7C8A63"></i><span>Green earth</span></li><li class="D"><i style="background:#232323"></i><span>Carbon black</span></li><li class="L"><i style="background:#5E4A33"></i><span>Raw umber</span></li><li class="L"><i style="background:#6B3D24"></i><span>Burnt umber</span></li><li class="L"><i style="background:#4A62A6"></i><span>Smalt</span></li></ul>
+    <div class="meta"><h2>The Creation of Adam</h2><span class="by">Michelangelo · c. 1508–1512</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="D"><i style="background:#2F5DA0"></i><span>Azurite</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="D"><i style="background:#3E8F7A"></i><span>Verdigris / copper green</span></li><li class="L"><i style="background:#E8C84A"></i><span>Lead-tin yellow</span></li><li class="L"><i style="background:#2A3F9E"></i><span>Natural ultramarine (lapis lazuli)</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#1E1C1B"></i><span>Bone black</span></li></ul>
+    <div class="meta"><h2>The Garden of Earthly Delights</h2><span class="by">Hieronymus Bosch · c. 1490–1510</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#2A3F9E"></i><span>Natural ultramarine (lapis lazuli)</span></li><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="D"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="D"><i style="background:#2E3355"></i><span>Indigo</span></li><li class="D"><i style="background:#CFB43A"></i><span>Weld (yellow lake)</span></li><li class="D"><i style="background:#5E4A33"></i><span>Raw umber</span></li><li class="D"><i style="background:#1E1C1B"></i><span>Bone black</span></li><li class="D"><i style="background:#232323"></i><span>Carbon black</span></li></ul>
+    <div class="meta"><h2>Girl with a Pearl Earring</h2><span class="by">Johannes Vermeer · c. 1665</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="D"><i style="background:#E8C84A"></i><span>Lead-tin yellow</span></li><li class="D"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="D"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="D"><i style="background:#4A62A6"></i><span>Smalt</span></li><li class="D"><i style="background:#E9B53A"></i><span>Orpiment / pararealgar</span></li><li class="D"><i style="background:#5E4A33"></i><span>Raw umber</span></li><li class="D"><i style="background:#1E1C1B"></i><span>Bone black</span></li><li class="L"><i style="background:#2F5DA0"></i><span>Azurite</span></li></ul>
+    <div class="meta"><h2>The Night Watch</h2><span class="by">Rembrandt · 1642</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="D"><i style="background:#2F5DA0"></i><span>Azurite</span></li><li class="D"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="D"><i style="background:#232323"></i><span>Carbon black</span></li><li class="L"><i style="background:#4A62A6"></i><span>Smalt</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#5E4A33"></i><span>Raw umber</span></li></ul>
+    <div class="meta"><h2>Las Meninas</h2><span class="by">Diego Velázquez · 1656</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#1E2F5A"></i><span>Prussian blue</span></li><li class="D"><i style="background:#2E3355"></i><span>Indigo</span></li><li class="D"><i style="background:#1F1F1F"></i><span>Sumi ink</span></li></ul>
+    <div class="meta"><h2>The Great Wave off Kanagawa</h2><span class="by">Katsushika Hokusai · c. 1831</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#1E2F5A"></i><span>Prussian blue</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="L"><i style="background:#5E4A33"></i><span>Raw umber</span></li><li class="L"><i style="background:#6B3D24"></i><span>Burnt umber</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#1E1C1B"></i><span>Bone black</span></li></ul>
+    <div class="meta"><h2>Wanderer above the Sea of Fog</h2><span class="by">Caspar David Friedrich · c. 1818</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#F0C66A"></i><span>Naples yellow</span></li><li class="L"><i style="background:#1E2F5A"></i><span>Prussian blue</span></li><li class="L"><i style="background:#5E4A33"></i><span>Raw umber</span></li><li class="L"><i style="background:#1E1C1B"></i><span>Bone black</span></li></ul>
+    <div class="meta"><h2>The Third of May 1808</h2><span class="by">Francisco Goya · 1814</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="L"><i style="background:#1E2F5A"></i><span>Prussian blue</span></li><li class="L"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#F0C66A"></i><span>Naples yellow</span></li><li class="L"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="L"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="L"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="L"><i style="background:#5E4A33"></i><span>Raw umber</span></li><li class="L"><i style="background:#1E1C1B"></i><span>Bone black</span></li></ul>
+    <div class="meta"><h2>Liberty Leading the People</h2><span class="by">Eugène Delacroix · 1830</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="D"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="L"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#E3A82B"></i><span>Indian yellow</span></li><li class="L"><i style="background:#F0C66A"></i><span>Naples yellow</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#1E1C1B"></i><span>Bone black</span></li></ul>
+    <div class="meta"><h2>The Fighting Temeraire</h2><span class="by">J. M. W. Turner · 1839</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="D"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="D"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="D"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="D"><i style="background:#F8F8F3"></i><span>Zinc white</span></li><li class="L"><i style="background:#1E2F5A"></i><span>Prussian blue</span></li><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li></ul>
+    <div class="meta"><h2>The Starry Night</h2><span class="by">Vincent van Gogh · 1889</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="D"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="D"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="D"><i style="background:#E24B6E"></i><span>Geranium lake</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#F8F8F3"></i><span>Zinc white</span></li><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#1E2F5A"></i><span>Prussian blue</span></li></ul>
+    <div class="meta"><h2>Sunflowers</h2><span class="by">Vincent van Gogh · 1888–1889</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="D"><i style="background:#F5C400"></i><span>Cadmium yellow</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#B0263F"></i><span>Madder lake</span></li><li class="D"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="D"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li><li class="L"><i style="background:#9B4F96"></i><span>Cobalt violet</span></li><li class="L"><i style="background:#F2B705"></i><span>Chrome yellow</span></li></ul>
+    <div class="meta"><h2>Water Lilies</h2><span class="by">Claude Monet · 1906</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="L"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="L"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li></ul>
+    <div class="meta"><h2>Impression, Sunrise</h2><span class="by">Claude Monet · 1872</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F2E24A"></i><span>Zinc yellow</span></li><li class="D"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="D"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="D"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="D"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="D"><i style="background:#F8F8F3"></i><span>Zinc white</span></li><li class="D"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li></ul>
+    <div class="meta"><h2>A Sunday Afternoon on the Island of La Grande Jatte</h2><span class="by">Georges Seurat · 1884–1886</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#B0263F"></i><span>Madder lake</span></li><li class="L"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="L"><i style="background:#F0C66A"></i><span>Naples yellow</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li><li class="L"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="L"><i style="background:#1B1A19"></i><span>Ivory black</span></li></ul>
+    <div class="meta"><h2>Bal du moulin de la Galette</h2><span class="by">Pierre-Auguste Renoir · 1876</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#1E2F5A"></i><span>Prussian blue</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="L"><i style="background:#2EB872"></i><span>Emerald green</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="L"><i style="background:#F2B705"></i><span>Chrome yellow</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="L"><i style="background:#1B1A19"></i><span>Ivory black</span></li></ul>
+    <div class="meta"><h2>The Card Players</h2><span class="by">Paul Cézanne · 1890s</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#D4AF37"></i><span>Gold leaf</span></li><li class="D"><i style="background:#C0C0C0"></i><span>Silver leaf</span></li><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#F8F8F3"></i><span>Zinc white</span></li><li class="L"><i style="background:#F5C400"></i><span>Cadmium yellow</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li><li class="L"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="L"><i style="background:#9E1B32"></i><span>Red lake</span></li><li class="L"><i style="background:#1B1A19"></i><span>Ivory black</span></li></ul>
+    <div class="meta"><h2>The Kiss</h2><span class="by">Gustav Klimt · 1907–1908</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="D"><i style="background:#F5C400"></i><span>Cadmium yellow</span></li><li class="D"><i style="background:#D8342B"></i><span>Vermilion</span></li><li class="D"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li><li class="L"><i style="background:#9E3B26"></i><span>Red ochre</span></li><li class="L"><i style="background:#F8F8F3"></i><span>Zinc white</span></li></ul>
+    <div class="meta"><h2>The Scream</h2><span class="by">Edvard Munch · 1893</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F5C400"></i><span>Cadmium yellow</span></li><li class="L"><i style="background:#D52B1E"></i><span>Cadmium red</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#F8F8F3"></i><span>Zinc white</span></li></ul>
+    <div class="meta"><h2>Broadway Boogie Woogie</h2><span class="by">Piet Mondrian · 1942–1943</span></div>
+  </article>
+  <article class="card">
+    <ul class="chips"><li class="L"><i style="background:#F5C400"></i><span>Cadmium yellow</span></li><li class="L"><i style="background:#D52B1E"></i><span>Cadmium red</span></li><li class="L"><i style="background:#2B3BA8"></i><span>Synthetic ultramarine</span></li><li class="L"><i style="background:#0047AB"></i><span>Cobalt blue</span></li><li class="L"><i style="background:#2A7AB0"></i><span>Cerulean blue</span></li><li class="L"><i style="background:#2C7A63"></i><span>Viridian</span></li><li class="L"><i style="background:#8E1A2E"></i><span>Alizarin crimson</span></li><li class="L"><i style="background:#9B4F96"></i><span>Cobalt violet</span></li><li class="L"><i style="background:#C9962E"></i><span>Yellow ochre</span></li><li class="L"><i style="background:#F8F8F3"></i><span>Zinc white</span></li><li class="L"><i style="background:#F2EFE6"></i><span>Lead white</span></li><li class="L"><i style="background:#1B1A19"></i><span>Ivory black</span></li></ul>
+    <div class="meta"><h2>Composition VIII</h2><span class="by">Wassily Kandinsky · 1923</span></div>
+  </article>
+</main>
+<footer>Swatches show each pigment's approximate pure colour, not how it appears in the painting. Compiled from general knowledge of the conservation literature, not from per-pigment citations; verify before quoting. Data: pigments.csv.</footer>
+</body>
+</html>

@@ -48,7 +48,7 @@ PAINTINGS = [
     ("The Fighting Temeraire", "The Fighting Temeraire", "J. M. W. Turner", "1839"),
     ("The Starry Night", "The Starry Night", "Vincent van Gogh", "1889"),
     ("Sunflowers (Van Gogh series)", "Sunflowers", "Vincent van Gogh", "1888–1889"),
-    ("Water Lilies (Monet series)", "Water Lilies", "Claude Monet", "1896–1926"),
+    ("Water Lilies (Monet series)", "Water Lilies", "Claude Monet", "1906"),
     ("Impression, Sunrise", "Impression, Sunrise", "Claude Monet", "1872"),
     ("A Sunday Afternoon on the Island of La Grande Jatte",
      "A Sunday Afternoon on the Island of La Grande Jatte", "Georges Seurat", "1884–1886"),
@@ -64,6 +64,13 @@ PAINTINGS = [
 # instead. The public-domain license check still applies, and each use is reported.
 COMMONS_FALLBACK = {
     "Composition VIII": "Wassily Kandinsky Composition VIII.jpg",
+}
+
+# Articles whose lead image is not a straight-on view of the canvas: always use
+# this Commons file instead (license check still applies; reported each run).
+COMMONS_OVERRIDE = {
+    # lead image is a photo of the MoMA triptych installation, walls and floor included
+    "Water Lilies (Monet series)": "Claude Monet - Water Lilies - 1906, Ryerson.jpg",
 }
 
 session = requests.Session()
@@ -140,7 +147,12 @@ def collect():
         print(f"- {article} ... ", end="", flush=True)
         try:
             try:
-                filename = lead_image(article)
+                if article in COMMONS_OVERRIDE:
+                    filename = COMMONS_OVERRIDE[article]
+                    print("[override] ", end="")
+                    problems.append((article, f"NOTE (kept): lead image overridden with {filename!r}"))
+                else:
+                    filename = lead_image(article)
             except LookupError as e:
                 if article not in COMMONS_FALLBACK:
                     raise
@@ -188,7 +200,10 @@ PAGE = """<!doctype html>
   * {{ box-sizing:border-box; }}
   body {{ margin:0; background:var(--bg); color:var(--ink);
          font:16px/1.45 Georgia, "Times New Roman", serif; }}
-  header {{ max-width:1280px; margin:0 auto; padding:48px 16px 24px; }}
+  header {{ max-width:1280px; margin:0 auto; padding:32px 16px 24px; }}
+  nav {{ display:flex; gap:18px; flex-wrap:wrap; font-family:system-ui,sans-serif; font-size:.9rem; margin-bottom:28px; }}
+  nav a {{ color:var(--muted); text-decoration:none; padding-bottom:2px; border-bottom:2px solid transparent; }}
+  nav a[aria-current] {{ color:var(--ink); border-color:var(--accent); }}
   h1 {{ font-size:clamp(1.8rem,4vw,2.8rem); margin:0 0 8px; font-weight:normal; letter-spacing:.01em; }}
   header p {{ margin:0; color:var(--muted); font-family:system-ui,sans-serif; font-size:.95rem; }}
   main {{ max-width:1280px; margin:0 auto; padding:0 16px 64px;
@@ -210,6 +225,7 @@ PAGE = """<!doctype html>
 </head>
 <body>
 <header>
+  <nav><a href="index.html" aria-current="page">Gallery</a><a href="colors.html">Average colour</a><a href="pigments.html">Pigments</a></nav>
   <h1>Public Domain Masterpieces</h1>
   <p>{count} paintings · images from Wikimedia Commons, all public domain · select a link for the full-resolution file</p>
 </header>

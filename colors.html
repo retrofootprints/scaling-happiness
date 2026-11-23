@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Average Colours</title>
+<style>
+  :root { --bg:#f6f3ee; --card:#fff; --ink:#1d1b18; --muted:#6b645a; --line:#e4ddd2; --accent:#8a4b2a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#151412; --card:#1f1d1a; --ink:#eee8df; --muted:#a39a8d; --line:#33302b; --accent:#e0a070; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.45 Georgia, "Times New Roman", serif; }
+  header { max-width:1280px; margin:0 auto; padding:32px 16px 24px; }
+  nav { display:flex; gap:18px; flex-wrap:wrap; font-family:system-ui,sans-serif; font-size:.9rem; margin-bottom:28px; }
+  nav a { color:var(--muted); text-decoration:none; padding-bottom:2px; border-bottom:2px solid transparent; }
+  nav a[aria-current] { color:var(--ink); border-color:var(--accent); }
+  h1 { font-size:clamp(1.8rem,4vw,2.8rem); margin:0 0 8px; font-weight:normal; }
+  header p { margin:0; color:var(--muted); font-family:system-ui,sans-serif; font-size:.95rem; max-width:70ch; }
+  main { max-width:1280px; margin:0 auto; padding:0 16px 64px; display:grid; gap:20px;
+         grid-template-columns:repeat(4,1fr); }
+  @media (max-width:1000px) { main { grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:700px)  { main { grid-template-columns:repeat(2,1fr); gap:12px; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+          display:flex; flex-direction:column; }
+  .meta { padding:12px 14px 14px; display:flex; flex-direction:column; gap:2px; }
+  .meta h2 { font-size:1.02rem; margin:0; line-height:1.25; }
+  .by { color:var(--muted); font-family:system-ui,sans-serif; font-size:.85rem; }
+  footer { max-width:1280px; margin:0 auto; color:var(--muted); font-family:system-ui,sans-serif;
+           font-size:.8rem; padding:0 16px 40px; }
+
+  .swatch { aspect-ratio:1; display:flex; align-items:flex-end; justify-content:space-between;
+            padding:12px 14px; font-family:ui-monospace,Consolas,monospace; font-size:.82rem; }
+  .swatch img { width:44px; height:44px; object-fit:cover; border-radius:3px;
+                box-shadow:0 0 0 1px #0002; }
+
+</style>
+</head>
+<body>
+<header>
+  <nav><a href="index.html">Gallery</a><a href="colors.html" aria-current="page">Average colour</a><a href="pigments.html">Pigments</a></nav>
+  <h1>Average colour of each canvas</h1>
+  <p>One colour per painting: the mean of every pixel of the painted surface, averaged in linear light (what the painting looks like blurred into a single tone). Frames, scan margins and museum surroundings are excluded.</p>
+</header>
+<main>
+  <article class="card">
+    <div class="swatch" style="background:#6A5D3C;color:#fff"><span>#6A5D3C<br>rgb(106, 93, 60)</span><img src="thumbs/mona-lisa.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Mona Lisa</h2><span class="by">Leonardo da Vinci · c. 1503–1519</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#AD9F80;color:#111"><span>#AD9F80<br>rgb(173, 159, 128)</span><img src="thumbs/the-birth-of-venus.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Birth of Venus</h2><span class="by">Sandro Botticelli · c. 1484–1486</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#B1A38C;color:#111"><span>#B1A38C<br>rgb(177, 163, 140)</span><img src="thumbs/the-creation-of-adam.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Creation of Adam</h2><span class="by">Michelangelo · c. 1508–1512</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#868162;color:#111"><span>#868162<br>rgb(134, 129, 98)</span><img src="thumbs/the-garden-of-earthly-delights.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Garden of Earthly Delights</h2><span class="by">Hieronymus Bosch · c. 1490–1510</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#685D4E;color:#fff"><span>#685D4E<br>rgb(104, 93, 78)</span><img src="thumbs/girl-with-a-pearl-earring.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Girl with a Pearl Earring</h2><span class="by">Johannes Vermeer · c. 1665</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#49361B;color:#fff"><span>#49361B<br>rgb(73, 54, 27)</span><img src="thumbs/the-night-watch.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Night Watch</h2><span class="by">Rembrandt · 1642</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#3B2D1E;color:#fff"><span>#3B2D1E<br>rgb(59, 45, 30)</span><img src="thumbs/las-meninas.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Las Meninas</h2><span class="by">Diego Velázquez · 1656</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#D3CFC0;color:#111"><span>#D3CFC0<br>rgb(211, 207, 192)</span><img src="thumbs/the-great-wave-off-kanagawa.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Great Wave off Kanagawa</h2><span class="by">Katsushika Hokusai · c. 1831</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#929094;color:#111"><span>#929094<br>rgb(146, 144, 148)</span><img src="thumbs/wanderer-above-the-sea-of-fog.jpeg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Wanderer above the Sea of Fog</h2><span class="by">Caspar David Friedrich · c. 1818</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#5A4834;color:#fff"><span>#5A4834<br>rgb(90, 72, 52)</span><img src="thumbs/the-third-of-may-1808.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Third of May 1808</h2><span class="by">Francisco Goya · 1814</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#797678;color:#111"><span>#797678<br>rgb(121, 118, 120)</span><img src="thumbs/liberty-leading-the-people.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Liberty Leading the People</h2><span class="by">Eugène Delacroix · 1830</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#8D816E;color:#111"><span>#8D816E<br>rgb(141, 129, 110)</span><img src="thumbs/the-fighting-temeraire.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Fighting Temeraire</h2><span class="by">J. M. W. Turner · 1839</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#5C6C7D;color:#fff"><span>#5C6C7D<br>rgb(92, 108, 125)</span><img src="thumbs/the-starry-night.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Starry Night</h2><span class="by">Vincent van Gogh · 1889</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#C0B25A;color:#111"><span>#C0B25A<br>rgb(192, 178, 90)</span><img src="thumbs/sunflowers.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Sunflowers</h2><span class="by">Vincent van Gogh · 1888–1889</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#608190;color:#111"><span>#608190<br>rgb(96, 129, 144)</span><img src="thumbs/water-lilies.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Water Lilies</h2><span class="by">Claude Monet · 1906</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#717164;color:#fff"><span>#717164<br>rgb(113, 113, 100)</span><img src="thumbs/impression-sunrise.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Impression, Sunrise</h2><span class="by">Claude Monet · 1872</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#878575;color:#111"><span>#878575<br>rgb(135, 133, 117)</span><img src="thumbs/a-sunday-afternoon-on-the-island-of-la-grande-jatte.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>A Sunday Afternoon on the Island of La Grande Jatte</h2><span class="by">Georges Seurat · 1884–1886</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#696A5E;color:#fff"><span>#696A5E<br>rgb(105, 106, 94)</span><img src="thumbs/bal-du-moulin-de-la-galette.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Bal du moulin de la Galette</h2><span class="by">Pierre-Auguste Renoir · 1876</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#614A2D;color:#fff"><span>#614A2D<br>rgb(97, 74, 45)</span><img src="thumbs/the-card-players.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Card Players</h2><span class="by">Paul Cézanne · 1890s</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#9B8B56;color:#111"><span>#9B8B56<br>rgb(155, 139, 86)</span><img src="thumbs/the-kiss.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Kiss</h2><span class="by">Gustav Klimt · 1907–1908</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#816252;color:#fff"><span>#816252<br>rgb(129, 98, 82)</span><img src="thumbs/the-scream.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>The Scream</h2><span class="by">Edvard Munch · 1893</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#E0D8C1;color:#111"><span>#E0D8C1<br>rgb(224, 216, 193)</span><img src="thumbs/broadway-boogie-woogie.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Broadway Boogie Woogie</h2><span class="by">Piet Mondrian · 1942–1943</span></div>
+  </article>
+  <article class="card">
+    <div class="swatch" style="background:#CEC6BE;color:#111"><span>#CEC6BE<br>rgb(206, 198, 190)</span><img src="thumbs/composition-viii.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="meta"><h2>Composition VIII</h2><span class="by">Wassily Kandinsky · 1923</span></div>
+  </article>
+</main>
+<footer>Computed from 500px Wikimedia Commons reproductions; photography and colour calibration differ between sources, so treat values as approximate. Data: colors.csv.</footer>
+</body>
+</html>
